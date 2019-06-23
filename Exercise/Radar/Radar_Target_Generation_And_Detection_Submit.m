@@ -167,12 +167,12 @@ Gd = 6; % As the signal leaks more in doppler direction
 
 % *%TODO* :
 %Select the number of Training Cells in both the dimensions.
-Tr = 4; % After the guard cells the noise is almost uniform. So a small region is enough to find the mean noise
-Td = 4;
+Tr = 2; % After the guard cells the noise is almost uniform. So a small region is enough to find the mean noise
+Td = 2;
 
 % *%TODO* :
 % offset the threshold by SNR value in dB
-offset = 12; % Looked at the difference in peak and noise value and it comes up to ~15dB
+offset = 15; % Looked at the difference in peak and noise value and it comes up to ~17dB
 
 % *%TODO* :
 %Create a vector to store noise_level for each iteration on training cells
