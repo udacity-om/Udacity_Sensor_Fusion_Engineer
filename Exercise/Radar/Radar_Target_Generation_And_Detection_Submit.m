@@ -31,7 +31,7 @@ R_max = 200;
 
 B = c/(2*R_res);
 Tchirp = 5.5*(2*R_max)/c;
-slope = B/Tchirp;
+slope = B/Tchirp; % For given system requirements the calculated slope should be around 2e13
 
 %Operating carrier frequency of Radar 
 fc= 77e9;             %carrier freq
@@ -72,11 +72,11 @@ for i=1:length(t)
         elapsed_time = current_time - t(i-1);
     end
     
-    update_R = R + v*current_time;
+    R = R + v*elapsed_time;
     
     % trip time is the time it took the Tx signal to reach the target(initailly at
     % 110m) and get reflected back to sensor
-    trip_time = 2*update_R/c;
+    trip_time = 2*R/c;
     % *%TODO* :
     %For each time sample we need update the transmitted and
     %received signal. 
@@ -120,6 +120,8 @@ figure ('Name','Range from First FFT')
 % plot FFT output 
 plot(first_fft(:,2));
 axis ([0 200 0 1]);
+xlabel('Range');
+ylabel('Amplitude');
 
 %% RANGE DOPPLER RESPONSE
 % The 2D FFT implementation is already provided here. This will run a 2DFFT
@@ -147,7 +149,11 @@ RDM = 10*log10(RDM) ;
 %dimensions
 doppler_axis = linspace(-100,100,Nd);
 range_axis = linspace(-200,200,Nr/2)*((Nr/2)/400);
-figure,surf(doppler_axis,range_axis,RDM);
+figure('Name','Range-Doppler from 2D FFT');
+surf(doppler_axis,range_axis,RDM);
+xlabel('Doppler');
+ylabel('Range');
+zlabel('Amplitude');
 
 %% CFAR implementation
 
@@ -221,7 +227,11 @@ end
 % *%TODO* :
 %display the CFAR output using the Surf function like we did for Range
 %Doppler Response output.
-figure,surf(doppler_axis,range_axis,RDM);
+figure('Name','Detection after 2D-CFAR');
+surf(doppler_axis,range_axis,RDM);
+xlabel('Doppler');
+ylabel('Range');
+zlabel('Amplitude');
 colorbar;
 
 
