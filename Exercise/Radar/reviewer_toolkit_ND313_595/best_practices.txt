@@ -1,0 +1,8 @@
+Radar Target Generation and Detection
+
+This project is fairly new at the time of writing, so there isn't yet a summary of common mistakes. 
+
+For reviewing, you should be able to follow the code in the sample submission here as a guide. The README could be improved in the sample solution, and you should encourage students to justify their reasoning for choices about
+- Implementation steps for the 2D CFAR process.
+- Selection of Training, Guard cells and offset.
+- Steps taken to suppress the non-thresholded cells at the edges

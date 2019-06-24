@@ -103,14 +103,15 @@ end
 figure ('Name','Signals in time domain')
 subplot(221);
 plot(Tx(1:Nr));
-title('Transmitted Signal, Tx');
+title('Transmitted Signal In Time Domain');
 xlabel('Time');
 ylabel('Amplitude');
 subplot(222);
 plot(Rx(1:Nr));
-title('Received Signal, Rx (Time Delayed Version Of Tx)');
+title('Reflected Signal In Time Domain');
 xlabel('Time');
 ylabel('Amplitude');
+subplot(223, 224);
 
 %% RANGE MEASUREMENT
 
@@ -120,14 +121,9 @@ ylabel('Amplitude');
 %Range and Doppler FFT respectively.
 Mix = reshape(Mix, [Nr,Nd]);
 %plotting the received signal
-% figure ('Name','Received signal in time domain')
-% plot(Mix(:,1));
-% title('Received Signal In Time Domain');
-% xlabel('Time');
-% ylabel('Amplitude');
-subplot(2,2,[3 4]);
+figure ('Name','Received signal in time domain')
 plot(Mix(:,1));
-title('Beat Signal(Tx*Rx)');
+title('Received Signal In Time Domain');
 xlabel('Time');
 ylabel('Amplitude');
 
@@ -281,7 +277,6 @@ title('Detection After 2D-CFAR Thresholding');
 xlabel('Doppler');
 ylabel('Range');
 zlabel('Amplitude');
-colormap cool;
 colorbar;
 
 

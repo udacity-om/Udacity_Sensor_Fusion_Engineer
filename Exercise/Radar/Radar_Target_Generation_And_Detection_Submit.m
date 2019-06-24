@@ -97,6 +97,13 @@ end
 %reshape the vector into Nr*Nd array. Nr and Nd here would also define the size of
 %Range and Doppler FFT respectively.
 Mix = reshape(Mix, [Nr,Nd]);
+%plotting the received signal
+figure ('Name','Received signal in time domain')
+plot(Mix(:,1));
+title('Received signal in time domain');
+xlabel('Time');
+ylabel('Amplitude');
+
 
  % *%TODO* :
 %run the FFT on the beat signal along the range bins dimension (Nr) and
@@ -120,6 +127,7 @@ figure ('Name','Range from First FFT')
 % plot FFT output 
 plot(first_fft(:,2));
 axis ([0 200 0 1]);
+title('Range from First FFT');
 xlabel('Range');
 ylabel('Amplitude');
 
@@ -151,6 +159,7 @@ doppler_axis = linspace(-100,100,Nd);
 range_axis = linspace(-200,200,Nr/2)*((Nr/2)/400);
 figure('Name','Range-Doppler from 2D FFT');
 surf(doppler_axis,range_axis,RDM);
+title('Range-Doppler from 2D FFT');
 xlabel('Doppler');
 ylabel('Range');
 zlabel('Amplitude');
@@ -229,6 +238,7 @@ end
 %Doppler Response output.
 figure('Name','Detection after 2D-CFAR');
 surf(doppler_axis,range_axis,RDM);
+title('Detection after 2D-CFAR');
 xlabel('Doppler');
 ylabel('Range');
 zlabel('Amplitude');
