@@ -11,7 +11,8 @@
     * OPENNI2_REDIST64 → The Redist folder under the place where your OpenNI2 is installed. Eg: C:\Program Files\OpenNI2\Redist
     * OPENCV_DIR → Go to your opencv install/unpack directory. Navigate to build → x64 (or 32 if you opted for 32 bits) → vc14 (in case you are using VS 2015). Set the value of the environment value to this folder. Eg: C:\Project\Softwares\OpenCV\opencv\build\x64\vc14
     * FREEGLUT_DIR → Set this to the location where you installed/extracted freeGLUT. Directories like bin and include should be UNDER the pointed folder. Eg: C:\Project\Softwares\freeglut
-5. Launch VS2015 and create an empty project. Add an empty file main.cpp. Add the required include directories to "Solution->Properties->C/C++->General->Additional Include Directories"
+5. Launch VS2015 and create an empty project. Add an empty file main.cpp. 
+6. Add the required include directories to "Solution->Properties->C/C++->General->Additional Include Directories"
     * $(OPENCV_DIR)\..\..\include
     * $(PCL_ROOT)\include\pcl-1.8\
     * $(PCL_ROOT)\3rdParty\VTK\include\vtk-7.0
@@ -21,4 +22,16 @@
     * $(PCL_ROOT)\3rdParty\Eigen\eigen3
     * $(OPENNI2_INCLUDE64)
     * $(FREEGLUT_DIR)\include
+7. Add the required library directories to "Solution->Properties->Linker->General->Additional Library Directories"
+    * $(OPENCV_DIR)\lib
+    * $(PCL_ROOT)\lib
+    * $(PCL_ROOT)\3rdParty\VTK\lib
+    * $(PCL_ROOT)\3rdParty\Boost\lib
+    * $(PCL_ROOT)\3rdParty\Qhull\lib
+    * $(PCL_ROOT)\3rdParty\FLANN\lib
+    * $(OPENNI2_LIB64)
+    * $(FREEGLUT_DIR)\lib\x64
+8. Add the required .lib files to "Solution->Properties->Linker->Input->Additional Dependencies". 
+   (Tip: Open up a command prompt and for each of the library locations set up above do the following: 
+   Navigate to the library location in the command prompt. Enter "dir &ast.lib /B > C:\Users\dz31jl\Desktop\store.txt", without the quotes. Copy the contents of the store.txt file and add it to the Additional Dependencies. The contenets of store.txt has to be copied before executing the command again.)
 
