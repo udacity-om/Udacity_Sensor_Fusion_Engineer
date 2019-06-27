@@ -50,7 +50,8 @@
 ```
 10. Save these settings. File->Export template->Project template. Give a name for the template, for e.g. PCL_Poject_template. Make sure that the "Automatically import the template into Visual Studio" is checked.
 11. Create a new project by selecting "PCL_Project_Template" and name it "Lidat_Obstacle_Detection". Get the files from https://github.com/udacity/SFND_Lidar_Obstacle_Detection.
-    ![alt text](ReadMe_Images/PCL_Solution_File_Structure.JPG)
+  Below is the file structure of my project:
+  ![alt text](ReadMe_Images/PCL_Solution_File_Structure.JPG)
   Make sure to build in x64 platform.
     * Add "\_CRT_SECURE_NO_WARNINGS" and "\_SCL_SECURE_NO_WARNINGS" to "Solution->Properties->C/C++->Preprocessor->Preprocessor Definitions if required for successful build.
     * Place OpenNI2.dll(from C:\Program Files\OpenNI2\Redist) in the project output folder(where the project .exe is generated, user-path\Lidar_Obstacle_Detection\x64\Debug)
