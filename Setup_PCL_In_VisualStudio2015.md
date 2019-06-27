@@ -33,5 +33,5 @@
     * $(FREEGLUT_DIR)\lib\x64
 8. Add the required .lib files to "Solution->Properties->Linker->Input->Additional Dependencies". 
    (Tip: Open up a command prompt and for each of the library locations set up above do the following: 
-   Navigate to the library location in the command prompt. Enter "dir \*.lib /B > C:\Users\dz31jl\Desktop\store.txt", without the quotes. Copy the contents of the store.txt file and add it to the Additional Dependencies. The contenets of store.txt has to be copied before executing the command again.)
+   Navigate to the library location in the command prompt. Enter "dir \*.lib /B > C:\Users\dz31jl\Desktop\store.txt", without the quotes. Copy the contents of the store.txt file and add it to the Additional Dependencies. Make sure to add the right .lib to the corresponding Solution Configuration(For e.g. opencv_world410d.lib should be added to Debug and opencv_world410.lib to Release). The contents of store.txt has to be copied before executing the command again otherwise store.txt will be overwritten.)
 
