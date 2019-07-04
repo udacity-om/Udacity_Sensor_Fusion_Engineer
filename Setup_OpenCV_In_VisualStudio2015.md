@@ -3,7 +3,7 @@
 
 - Download latest OpenCV for Windows from https://opencv.org/releases/. I downloaded v4.1.0 at the time of writing this document.
 - Extract the package to a folder of your choice (E.g. C:\Project\Softwares\OpenCV\opencv)
-- Download opencv_contrib from https://github.com/opencv/opencv_contrib. Copy the file xfeatures2d.hpp and folder xfeatures2d from opencv_contrib-master\modules\xfeatures2d\include\opencv2 to C:\Project\Softwares\OpenCV\opencv\build\include\opencv2. This is required for using extra features and/or modules like BRISK desciptor 
+- Download opencv_contrib from https://github.com/opencv/opencv_contrib. Copy the file xfeatures2d.hpp and folder xfeatures2d from opencv_contrib-master\modules\xfeatures2d\include\opencv2 to C:\Project\Softwares\OpenCV\opencv\build\include\opencv2. This is required for using extra features and/or modules like BRISK desciptor. Copy the folder xfeatures2d from C:\Project\Softwares\OpenCV\opencv_contrib-master\modules to C:\Project\Softwares\OpenCV\opencv\sources\modules
 - Add the path "user-path\opencv\build\x64\vc14\bin" to the environment variable. Log Off and Log On.
 - Open VS2015. Create a new empty VC++ project. Set the platform to x64. Create an empty main.cpp.
 - Copy a sample code(for e.g. user-path\opencv\sources\samples\cpp\tutorial_code\ImgProc\Morphology_1.cpp) to the main.cpp
